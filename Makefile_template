@@ -1,7 +1,8 @@
 CFLAGS=-std=c99 -Wall -Wextra -Werror -pedantic -g
-main: main.c
-	gcc$(CFLAGS) main.c -o main
-another_main: another_main.c
+LDFLAGS=-lm
+CC=gcc
 
+main: main.c
+	$(CC) $(CFLAGS) main.c $(LDFLAGS) -o main
 clean:
-	rm main another_main
+	rm main
